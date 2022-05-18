@@ -26,20 +26,29 @@ class Test
         //----------------------------------------------------
 
         //WithMax score
-        var scores = new Score[]{
-            new Score{Value=int.MinValue},
-            new Score{Value=1},
-            new Score{Value=-15},
-            new Score{Value=12312},
-            new Score{Value=9999999},
-        };
-        var res = ass.WithMax(scores);
-        Console.WriteLine($"{res?.Value}");
+        // var scores = new Score[]{
+        //     new Score{Value=int.MinValue},
+        //     new Score{Value=1},
+        //     new Score{Value=-15},
+        //     new Score{Value=12312},
+        //     new Score{Value=9999999},
+        // };
+        // var res = ass.WithMax(scores);
+        // Console.WriteLine($"{res?.Value}");
 
         //----------------------------------------------------
         // //GetAverageOrDefault
-        // var res1 = ass.GetAverageOrDefault(new int[]{1,5,9,4,11,6});
-        // Console.WriteLine($"{res1}");
+        int[] t = new int[1000000];
+        Random random = new Random();
+        for (int i = 0; i < t.Length; i++)
+        {
+            t[i] = random.Next();
+        }
+
+        var res1 = ass.GetAverageOrDefault(new int[]{10,10,5});
+        //var res1 = ass.GetAverageOrDefault(t);
+     
+        Console.WriteLine($"{res1}");
 
         //----------------------------------------------------
 
