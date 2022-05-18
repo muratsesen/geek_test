@@ -25,16 +25,16 @@ class Test
 
         //----------------------------------------------------
 
-        // //WithMax score
-        // Score a = new Score();
-        // Score b = new Score();
-        // Score c = new Score();
-        // a.Value = 1;
-        // b.Value = int.MinValue;
-        // c.Value = int.MaxValue;
-
-        // var res = ass.WithMax(null);
-        // Console.WriteLine($"{res?.Value}");
+        //WithMax score
+        var scores = new Score[]{
+            new Score{Value=int.MinValue},
+            new Score{Value=1},
+            new Score{Value=-15},
+            new Score{Value=12312},
+            new Score{Value=9999999},
+        };
+        var res = ass.WithMax(scores);
+        Console.WriteLine($"{res?.Value}");
 
         //----------------------------------------------------
         // //GetAverageOrDefault
@@ -74,49 +74,49 @@ class Test
         // var res = ass.ClosestToAverageOrDefault(new int[]{1,5,9,4,11,6});
         // Console.WriteLine($"{res}");
 
-        //----------------------------------------------------
+        // //----------------------------------------------------
 
-        // Group
+        // // Group
 
-        Booking[] p = {
-             new Booking {Project="HR",   Date = Convert.ToDateTime("01/02/2020") , Allocation= 10},
-             new Booking {Project="CRM",  Date = Convert.ToDateTime("01/02/2020") , Allocation= 15},
-             new Booking {Project="HR",   Date = Convert.ToDateTime("02/02/2020") , Allocation= 10},
-             new Booking {Project="CRM",  Date = Convert.ToDateTime("02/02/2020") , Allocation= 15},
-             new Booking {Project="HR",   Date = Convert.ToDateTime("03/02/2020") , Allocation= 15},
-             new Booking {Project="CRM",  Date = Convert.ToDateTime("03/02/2020") , Allocation= 15},
-             new Booking {Project="HR",   Date = Convert.ToDateTime("04/02/2020") , Allocation= 15},
-             new Booking {Project="CRM",  Date = Convert.ToDateTime("04/02/2020") , Allocation= 15},
-             new Booking {Project="CRM",  Date = Convert.ToDateTime("05/02/2020") , Allocation= 15},
-             new Booking {Project="HR",   Date = Convert.ToDateTime("05/02/2020") , Allocation= 15},
-             new Booking {Project="ECom", Date = Convert.ToDateTime("05/02/2020") , Allocation= 15},
-             new Booking {Project="ECom", Date = Convert.ToDateTime("06/02/2020") , Allocation= 10},
-             new Booking {Project="CRM",  Date = Convert.ToDateTime("06/02/2020") , Allocation= 15},
-             new Booking {Project="ECom", Date = Convert.ToDateTime("07/02/2020") , Allocation= 10},
-             new Booking {Project="CRM",  Date = Convert.ToDateTime("07/02/2020") , Allocation= 15}
-        };
+        // Booking[] p = {
+        //      new Booking {Project="HR",   Date = Convert.ToDateTime("01/02/2020") , Allocation= 10},
+        //      new Booking {Project="CRM",  Date = Convert.ToDateTime("01/02/2020") , Allocation= 15},
+        //      new Booking {Project="HR",   Date = Convert.ToDateTime("02/02/2020") , Allocation= 10},
+        //      new Booking {Project="CRM",  Date = Convert.ToDateTime("02/02/2020") , Allocation= 15},
+        //      new Booking {Project="HR",   Date = Convert.ToDateTime("03/02/2020") , Allocation= 15},
+        //      new Booking {Project="CRM",  Date = Convert.ToDateTime("03/02/2020") , Allocation= 15},
+        //      new Booking {Project="HR",   Date = Convert.ToDateTime("04/02/2020") , Allocation= 15},
+        //      new Booking {Project="CRM",  Date = Convert.ToDateTime("04/02/2020") , Allocation= 15},
+        //      new Booking {Project="CRM",  Date = Convert.ToDateTime("05/02/2020") , Allocation= 15},
+        //      new Booking {Project="HR",   Date = Convert.ToDateTime("05/02/2020") , Allocation= 15},
+        //      new Booking {Project="ECom", Date = Convert.ToDateTime("05/02/2020") , Allocation= 15},
+        //      new Booking {Project="ECom", Date = Convert.ToDateTime("06/02/2020") , Allocation= 10},
+        //      new Booking {Project="CRM",  Date = Convert.ToDateTime("06/02/2020") , Allocation= 15},
+        //      new Booking {Project="ECom", Date = Convert.ToDateTime("07/02/2020") , Allocation= 10},
+        //      new Booking {Project="CRM",  Date = Convert.ToDateTime("07/02/2020") , Allocation= 15}
+        // };
 
-        var res = ass.Group(p);
+        // var res = ass.Group(p);
 
-        foreach (var item in res)
-        {
-            System.Console.WriteLine("");
-            System.Console.Write("From:" + item.From.ToShortDateString() + " - ");
-            System.Console.Write("To:" + item.To.ToShortDateString());
-            foreach (var i in item.Items)
-            {
-                System.Console.Write($" {{ Project: {i.Project}, Allocation:{i.Allocation} }}");
-            }
-        }
-        System.Console.WriteLine();
+        // foreach (var item in res)
+        // {
+        //     System.Console.WriteLine("");
+        //     System.Console.Write("From:" + item.From.ToShortDateString() + " - ");
+        //     System.Console.Write("To:" + item.To.ToShortDateString());
+        //     foreach (var i in item.Items)
+        //     {
+        //         System.Console.Write($" {{ Project: {i.Project}, Allocation:{i.Allocation} }}");
+        //     }
+        // }
+        // System.Console.WriteLine();
 
         
-        //----------------------------------------------------
+        // //----------------------------------------------------
 
-        // GetAllScoresFrom
-        IDataProvider<Score> dp = new DataProvider();
+        // // GetAllScoresFrom
+        // IDataProvider<Score> dp = new DataProvider();
 
-        ass.GetAllScoresFrom(dp);
+        // ass.GetAllScoresFrom(dp);
     }
 }
 
